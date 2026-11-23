@@ -99,3 +99,32 @@ main a{overflow-wrap:anywhere}
   .brand,.site-nav a{color:#000}
   main{box-shadow:none;border:0;padding:0;margin:16px auto}
 }
+
+/* ===== Imagery (staging v2): app icon, lock marks, device frames, header pattern. All local, no JS. ===== */
+.site-header{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='%23ffffff' fill-opacity='.05'%3E%3Cellipse cx='12' cy='10' rx='2' ry='5' transform='rotate(-12 12 10)'/%3E%3Cellipse cx='18' cy='10' rx='2' ry='5' transform='rotate(12 18 10)'/%3E%3Ccircle cx='15' cy='18' r='5'/%3E%3Ccircle cx='42' cy='44' r='2'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(180deg,var(--brand),var(--brand-2))}
+h1.with-icon{display:flex;align-items:center;gap:14px}
+.title-icon{width:48px;height:48px;flex:none;border-radius:11px;box-shadow:0 1px 3px rgba(16,32,56,.18)}
+.device{display:block;background:#1c2128;box-shadow:0 10px 30px rgba(16,32,56,.22),inset 0 0 0 1px rgba(255,255,255,.08)}
+.device img{display:block;width:100%;height:auto;background:#fff}
+.device.ipad{padding:3.2%;border-radius:6.5%/4.9%}
+.device.ipad img{border-radius:3.5%/2.6%}
+.device.iphone{padding:4.5%;border-radius:15%/7%}
+.device.iphone img{border-radius:11%/5.1%}
+.hero,.pair{position:relative}
+.hero{margin:8px 0 34px;padding-right:15%}
+.hero .ipad{width:100%}
+.hero .iphone{position:absolute;right:0;bottom:-18px;width:32%}
+.product-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.product-row .pair{padding:16px 18% 22px 12px;background:var(--accent-soft);border-radius:12px}
+.pair .ipad{width:100%}
+.pair .iphone{position:absolute;right:8px;bottom:10px;width:36%}
+.pair.single{max-width:400px;margin:18px 0 8px;padding-right:16%}
+.pair.single .iphone{right:0;bottom:-10px;width:30%}
+@media (max-width:640px){
+  .title-icon{width:40px;height:40px}
+  .product-row{grid-template-columns:1fr;gap:16px}
+  .product-row .pair{max-width:380px;margin:0 auto;width:100%}
+}
+@media (max-width:359px){.hero{padding-right:0}.hero .iphone{display:none}}
+@media (prefers-color-scheme:dark){.site-header{background-image:linear-gradient(180deg,#0f2238,#14304f)}.device{background:#05080c}}
+@media print{.hero,.product-row,.pair{display:none}.title-icon{box-shadow:none}}
